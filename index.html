@@ -13,12 +13,14 @@
             background: url('https://raw.githubusercontent.com/moritzgauss/flashsheet/refs/heads/main/freepik__naturally-expand__6898.jpeg') repeat;
             background-size: 1700px; 
             color: black;
-            width: 100vw;
+            overflow-x: hidden;
+
         }
 
         h1, h2, h3 {
             font-family: 'Ballet', cursive;
             text-align: center;
+            width: 100%;
             margin: 1em 0;
             font-size: 6em;
             color: rgba(3, 0, 100, 0.9); /* Grundfarbe */
@@ -29,7 +31,7 @@
             font-size: 1.5em;
             line-height: 1.2;
             margin: 1em;
-            width: 100vw;
+            width: 100%;
             text-align: justify;
             color: rgba(3, 0, 100, 0.9);
             mix-blend-mode: overlay; /* Text scheint durch den Hintergrund */
@@ -39,7 +41,7 @@
             position: relative;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 100%;
             background: transparent;
             display: flex;
             justify-content: space-between;
@@ -55,8 +57,6 @@
 
         ul {
             list-style: none;
-            margin: 0;
-            padding: 0;
             display: flex;
             align-items: left;
             gap: 1em;
@@ -85,7 +85,6 @@
         @media (max-width: 768px) {
             body {
                 background-size: 800px;
-                width: 100vw;
                 overflow-x: hidden;
             }
 
@@ -95,8 +94,7 @@
                 position: relative;
                 align-items: left;
                 background-color: transparent;
-                margin-top: 2em;
-                margin-bottom: 2em;
+                margin-bottom: 1em;
                 width: 100%;
                 padding-left: 10px;
             }
