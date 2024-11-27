@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattoo auf Haut</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Eagle+Lake&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Eagle Lake', cursive;
+            background: url('https://raw.githubusercontent.com/moritzgauss/flashsheet/refs/heads/main/freepik__naturally-expand__6898.jpeg') repeat;
+            background-size: 1700px; 
+            color: black;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Ballet', cursive;
+            text-align: center;
+            margin: 1em 0;
+            font-size: 6em;
+            color: rgba(3, 0, 100, 0.9); /* Grundfarbe */
+            mix-blend-mode: overlay; /* Text scheint durch den Hintergrund */
+        }
+
+        p {
+            font-size: 1.5em;
+            line-height: 1.8;
+            margin: 1em;
+            text-align: justify;
+            color: rgba(3, 0, 100, 0.9);
+            mix-blend-mode: overlay; /* Text scheint durch den Hintergrund */
+        }
+
+        nav {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5em 1em;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1em;
+        }
+
+        li {
+            font-size: 3em;
+            mix-blend-mode: screen; 
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            color: rgba(3, 0, 100, 0.9); 
+            mix-blend-mode: overlay; 
+        }
+
+        li a {
+            text-decoration: underline; 
+            color: rgba(3, 0, 100, 0.9);
+            mix-blend-mode: overlay; 
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        li a:hover {
+            opacity: 0.7; 
+            transform: scale(1.1); 
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: 800px; 
+            }
+
+            ul {
+                display: none; /* Hidden by default */
+                flex-direction: column;
+                position: absolute;
+                background-color: transparent;
+                top: 8em;
+                left: 0;
+                width: 100%;
+                padding-left: 10px;
+            }
+
+            ul.open {
+                display: flex; /* Show when open */
+            }
+
+            li {
+                font-size: 3em;
+                color: blue;
+                z-index: 10;
+            }
+
+            li a {
+                text-decoration: underline; 
+                color: blue;
+                z-index: 10;
+            }
+
+            li a:hover {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
+
+            .menu-toggle {
+                font-size: 6em;
+                display: block;
+                color: rgba(3, 0, 100, 0.9);
+                mix-blend-mode: overlay; 
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                z-index: 10;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">⚜</div>
+        <ul id="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>    
+
+    <header>
+        <h1>Tattoo auf Haut</h1>
+    </header>
+
+    <main>
+        <section id="section1">
+            <h2>Willkommen</h2>
+            <p>Dies ist eine Website, die wie Tattoos auf Haut gestaltet ist. Die Hautstruktur im Hintergrund kombiniert mit den speziell ausgewählten Schriftarten schafft eine einzigartige Atmosphäre.</p>
+        </section>
+        <section id="section2">
+            <h2>Über uns</h2>
+            <p>Wir lieben Tattoos und Hautkunst. Unsere Mission ist es, die Ästhetik von Tattoos in digitale Designs zu übersetzen.</p>
+        </section>
+        <section id="section3">
+            <h2>Kontakt</h2>
+            <p>Hast du Fragen? Kontaktiere uns gerne, und wir freuen uns auf deine Nachricht!</p>
+        </section>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('ul');
+            menu.classList.toggle('open');
+            const menuToggle = document.querySelector('.menu-toggle');
+            menuToggle.textContent = menu.classList.contains('open') ? '⚕' : '⚜';
+        }
+    </script>
+</body>
+</html>
