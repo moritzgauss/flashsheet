@@ -10,11 +10,10 @@
             margin: 0;
             padding: 0;
             font-family: 'Eagle Lake', cursive;
-background: url('https://raw.githubusercontent.com/moritzgauss/flashsheet/refs/heads/main/freepik__naturally-expand__6898.jpeg') repeat;
-background-size: 1700px; /* Minimal größer als das Original */
-background-position: -2px -2px; /* Leichte Überlappung */
+            background: url('https://raw.githubusercontent.com/moritzgauss/flashsheet/refs/heads/main/freepik__naturally-expand__6898.jpeg') repeat;
+            background-size: 1700px;
+            background-position: -2px -2px;
             overflow-x: hidden;
-
         }
 
         h1, h2, h3 {
@@ -23,111 +22,95 @@ background-position: -2px -2px; /* Leichte Überlappung */
             width: 100%;
             margin: 1em 0;
             font-size: 6em;
-            color: rgba(3, 0, 100, 0.9); /* Grundfarbe */
-            mix-blend-mode: overlay; /* Text scheint durch den Hintergrund */
+            color: rgba(3, 0, 100, 0.9);
+            mix-blend-mode: overlay;
         }
 
         p {
             font-size: 1.5em;
             line-height: 1.2;
             margin: 1em;
-            width: 100%;
             text-align: justify;
             color: rgba(3, 0, 100, 0.9);
-            mix-blend-mode: overlay; /* Text scheint durch den Hintergrund */
+            mix-blend-mode: overlay;
         }
 
         nav {
             position: relative;
-            top: 0;
-            left: 0;
             width: 100%;
             background: transparent;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 0.5em 1em;
         }
 
         .menu-toggle {
-            display: none;
-            font-size: 2em;
+            font-size: 6em;
             cursor: pointer;
+            color: rgba(3, 0, 100, 0.9);
+            mix-blend-mode: overlay;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(3, 0, 100, 0.4);
         }
 
         ul {
             list-style: none;
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 10px;
+            margin: 1em 0;
+        }
+
+        ul.open {
             display: flex;
-            align-items: left;
-            gap: 1em;
         }
 
         li {
             font-size: 3em;
-            mix-blend-mode: screen; 
+            color: rgba(3, 0, 100, 0.9);
+            mix-blend-mode: overlay;
             transition: opacity 0.3s ease, transform 0.3s ease;
-            color: rgba(3, 0, 100, 0.9); 
-            mix-blend-mode: overlay; 
         }
 
         li a {
-            text-decoration: underline; 
+            text-decoration: underline;
             color: rgba(3, 0, 100, 0.9);
-            mix-blend-mode: overlay; 
+            mix-blend-mode: overlay;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         li a:hover {
-            opacity: 0.7; 
-            transform: scale(1.1); 
+            opacity: 0.7;
+            transform: scale(1.1);
         }
 
         @media (max-width: 768px) {
-            body {
-                background-size: 800px;
-                overflow-x: hidden;
-            }
-
             ul {
-                display: none; /* Hidden by default */
-                flex-direction: column;
                 position: relative;
-                align-items: left;
-                background-color: transparent;
-                margin-bottom: 1em;
                 width: 100%;
-                padding-left: 10px;
-            }
-
-            ul.open {
-                display: flex; /* Show when open */
             }
 
             li {
-                font-size: 3em;
-                color: blue;
-                z-index: 10;
-            }
-
-            li a {
-                text-decoration: underline; 
-                color: blue;
-                z-index: 10;
-            }
-
-            li a:hover {
-                opacity: 0.7;
-                transform: scale(1.1);
+                font-size: 2.5em;
             }
 
             .menu-toggle {
-                font-size: 6em;
-                display: block;
-                color: rgba(3, 0, 100, 0.9);
-                mix-blend-mode: overlay; 
-                transition: opacity 0.3s ease, transform 0.3s ease;
-                z-index: 10;
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                z-index: 1000;
             }
+        }
+
+        #tattoos {
+            text-align: center;
+            margin-top: 2em;
+            font-size: 5em;
+            color: rgba(3, 0, 100, 0.9);
+        }
+
+        #tattoos span {
+            display: inline-block;
+            margin: 0.2em;
         }
     </style>
 </head>
@@ -135,38 +118,51 @@ background-position: -2px -2px; /* Leichte Überlappung */
     <nav>
         <div class="menu-toggle" onclick="toggleMenu()">✞</div>
         <ul id="nav-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section2">Über uns</a></li>
+            <li><a href="#section3">Kontakt</a></li>
         </ul>
     </nav>    
 
     <header>
-        <h1>Tattoo offenbach</h1>
+        <h1>Tattoo Offenbach</h1>
     </header>
 
     <main>
         <section id="section1">
             <h2>Welcome</h2>
-            <p>This site is like tattoos on skin, bro. The skin texture in the background mixed with them handpicked fonts hits different—straight vibe check. It’s all about that unique atmosphere, feel me? Shoutout to the dopest tattoo artist in Offenbach—lind once, full swag.</p>
+            <p>This site is like tattoos on skin, bro. The skin texture in the background mixed with them handpicked fonts hits different—straight vibe check. Shoutout to the dopest tattoo artist in Offenbach—lind once, full swag.</p>
         </section>
+
         <section id="section2">
             <h2>Über uns</h2>
-            <p>We’re all about tattoos and skin art. Our mission? To bring the aesthetic of ink into digital design.</p>
+            <p>We’re all about tattoos and skin art. Our mission? To bring the aesthetic of ink into digital design. Whether it’s timeless blackwork or bold new-school styles, we’re inspired by the artistry behind the craft.</p>
         </section>
+
+        <section id="tattoos">
+            <span>✧</span><span>★</span><span>✦</span><span>✪</span><span>✷</span>
+            <span>✭</span><span>✵</span><span>✺</span><span>✸</span><span>❇</span>
+        </section>
+
         <section id="section3">
             <h2>Kontakt</h2>
-            <p>Got any questionzz contact us my g'ss!!</p>
+            <p>Got any questions? Reach out to us! Whether you're looking for inspiration or want to book an appointment, we're here to help. Email: <a href="mailto:info@tattoo-offenbach.com">info@tattoo-offenbach.com</a></p>
         </section>
     </main>
 
     <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('ul');
+
         function toggleMenu() {
-            const menu = document.querySelector('ul');
             menu.classList.toggle('open');
-            const menuToggle = document.querySelector('.menu-toggle');
             menuToggle.textContent = menu.classList.contains('open') ? '⚕' : '✞';
         }
+
+        window.addEventListener('scroll', () => {
+            const rotation = window.scrollY / 5;
+            menuToggle.style.transform = `rotate(${rotation}deg)`;
+        });
     </script>
 </body>
-</html
+</html>
