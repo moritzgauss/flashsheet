@@ -81,13 +81,15 @@
 
         @media (max-width: 768px) {
             body {
-                background-size: 800px; 
+                background-size: 800px;
+                max-width: 100vw;
+                overflow-x: hidden;
             }
 
             ul {
                 display: none; /* Hidden by default */
                 flex-direction: column;
-                position: absolute;
+                position: relative;
                 background-color: transparent;
                 top: 8em;
                 left: 0;
