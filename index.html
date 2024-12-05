@@ -15,8 +15,14 @@
             background-position: -2px -2px;
             background-color: #8d5524;
             width: 100%
+              transform: scale(0.1); /* Sehr kleiner Zoom zu Beginn */
+  transform-origin: center; /* Vom Zentrum aus zoomen */
+  transition: transform 2s ease-in-out; /* Weiche Übergang
             padding-bottom: 40px;
         }
+body.loaded {
+  transform: scale(1); /* Normale Größe nach dem Zoom */
+}
 
         h1, h2, h3 {
             font-family: 'Ballet', cursive;
